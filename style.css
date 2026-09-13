@@ -1,0 +1,163 @@
+/* 공통 디자인 시스템(루트 DESIGN.md)의 간격·모서리·글자 크기를 따른다.
+   소리내어읽기의 `공개_웹페이지/style.css` 를 그대로 가져와 주조색만 바꿨다.
+
+   ⚠️ 주조색은 앱 아이콘의 파랑(#0B66AE — 부엉이 눈에서 뽑은 값)이다.
+   이 페이지는 앱의 얼굴이라 토스풍 파랑(#3182F6)을 쓰면 아이콘과 어긋난다.
+   DESIGN.md 가 허용하는 예외이며, 소리내어읽기 페이지가 같은 까닭으로
+   #3B5BDB 를 쓴다. 두 페이지의 색이 다른 것은 실수가 아니라 앱이 달라서다. */
+
+:root {
+  --primary: #0B66AE;
+  --primary-container: #e8f1f8;
+  --background: #f2f4f6;
+  --surface: #ffffff;
+  --on-surface: #191f28;
+  --on-surface-variant: #6b7684;
+  --border: #e5e8eb;
+  --border-subtle: #f2f4f6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 40px 20px 80px;
+  background: var(--background);
+  color: var(--on-surface);
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+               'Apple SD Gothic Neo', sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  -webkit-text-size-adjust: 100%;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 32px 24px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  margin: 0 0 4px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+  margin: 32px 0 12px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 24px 0 8px;
+}
+
+p { margin: 0 0 12px; }
+ul { margin: 0 0 12px; padding-left: 20px; }
+ol { margin: 0 0 12px; padding-left: 20px; }
+li { margin-bottom: 6px; }
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.meta, .back {
+  color: var(--on-surface-variant);
+  font-size: 13px;
+  line-height: 18px;
+}
+.meta { margin-bottom: 24px; }
+.back { margin: 0 0 24px; }
+
+.callout {
+  background: var(--primary-container);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 8px;
+}
+/* 방침 첫머리의 한 줄 요약처럼 아래에 본문이 바로 붙는 자리가 있어 여백을 둔다. */
+.callout + h2 { margin-top: 24px; }
+
+.lead {
+  font-size: 16px;
+  color: var(--on-surface-variant);
+  margin-bottom: 24px;
+}
+
+/* 표는 좁은 화면에서 넘칠 수 있어 가로로만 스크롤시킨다.
+   부엉 방침은 표가 셋이라(§2·§3·§5) 이 감싸개를 반드시 씌운다. */
+.table-wrap { overflow-x: auto; margin-bottom: 12px; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 12px;
+}
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+th {
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.faq {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+.faq strong { display: block; margin-bottom: 6px; }
+.faq p { margin: 0; color: var(--on-surface-variant); }
+/* ⚠️ 위 `margin: 0` 때문에 문단이 둘 이상이면 서로 달라붙는다. 사이를 띄운다. */
+.faq p + p,
+.faq p + ol,
+.faq p + ul { margin-top: 10px; }
+.faq ol,
+.faq ul { margin: 0; padding-left: 20px; color: var(--on-surface-variant); }
+.faq ol + p,
+.faq ul + p { margin-top: 10px; }
+.faq li { margin-bottom: 6px; }
+.faq code {
+  background: var(--surface-variant, #f1f3f5);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 0.92em;
+}
+
+code {
+  background: #f1f3f5;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 0.92em;
+}
+
+footer {
+  max-width: 720px;
+  margin: 24px auto 0;
+  color: var(--on-surface-variant);
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  body { padding: 20px 12px 60px; }
+  main { padding: 24px 16px; border-radius: 14px; }
+  h1 { font-size: 24px; line-height: 32px; }
+}
