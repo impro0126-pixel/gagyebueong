@@ -3,18 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>개인정보처리방침 — 가계부엉</title>
+<title>개인정보처리방침 — 가계부 쓸게요</title>
+<link rel="alternate" hreflang="ko" href="https://impro0126-pixel.github.io/gagyebueong/privacy.html">
+<link rel="alternate" hreflang="en" href="https://impro0126-pixel.github.io/gagyebueong/en/privacy.html">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
-  <p class="back"><a href="./">← 가계부엉</a></p>
+  <p class="back"><a href="./">← 가계부 쓸게요</a> · <a href="en/privacy.html" lang="en">English</a></p>
 
   <h1>개인정보처리방침</h1>
-  <p class="meta">시행일: [출시일을 여기에 적습니다]</p>
+  <p class="meta">최종 수정: 2026년 10월 28일</p>
 
   <div class="callout">
-    <strong>가계부엉은 사용자의 개인정보를 수집하지 않습니다.</strong>
+    <strong>가계부 쓸게요는 사용자의 개인정보를 수집하지 않습니다.</strong>
     계정이 없고, 앱을 만든 사람이 운영하는 서버도 없습니다.
     적으신 가계부는 사용하시는 기기와 <strong>사용자 본인의 아이클라우드</strong>에만 남습니다.
   </div>
@@ -29,9 +31,10 @@
     <li>사용 기록·분석 정보 (분석 도구나 광고 모듈이 들어 있지 않습니다)</li>
     <li>기기 식별자·광고 식별자</li>
   </ul>
-  <p>앱은 <strong>어떤 시스템 권한도 요청하지 않습니다.</strong> 실행 중에 권한을 묻는 창이 뜨지 않습니다.
+  <p>앱이 묻는 시스템 권한은 <strong>캘린더 하나뿐</strong>이고, 그마저 설정 → 자동이체의 <strong>「캘린더에 보이기」를
+     켜실 때만</strong> 묻습니다(§6-1). 그 밖에는 권한을 묻는 창이 뜨지 않습니다.
      사진을 고르는 화면도 iOS 가 앱 <strong>바깥에서</strong> 띄우는 것이라(<code>PhotosPicker</code>)
-     「사진 접근을 허용하시겠습니까」를 묻지 않습니다. 물을 권한 자체를 쓰지 않기 때문입니다.</p>
+     「사진 접근을 허용하시겠습니까」를 묻지 않습니다.</p>
 
   <h2>2. 어디에 저장되는가</h2>
   <p>적으신 것은 아래 두 곳에만 있습니다. 둘 다 <strong>사용자의 자리</strong>이며,
@@ -66,8 +69,8 @@
      사용자의 자료가 개발자에게 전달되는 경로 자체가 존재하지 않습니다.</p>
   <p>만든 이야기가 아니라 코드에서 확인한 사실입니다. 앱의 소스 전체에서 네트워크 통신에 쓰이는
      코드를 찾아본 결과가 <strong>한 건도 없습니다.</strong> 앱이 쓰는 틀은 애플이 만든 것뿐이며
-     (SwiftUI·SwiftData·CloudKit·Swift Charts), <strong>다른 회사의 라이브러리가 하나도 들어 있지 않습니다.</strong></p>
-  <p>기기 밖으로 나가는 경로는 아래 다섯이 전부이고, 다섯 다 <strong>사용자 본인의 애플 계정 안</strong>에서 끝납니다.</p>
+     (SwiftUI·SwiftData·CloudKit·Swift Charts·EventKit), <strong>다른 회사의 라이브러리가 하나도 들어 있지 않습니다.</strong></p>
+  <p>기기 밖으로 나가는 경로는 아래 여섯이 전부이고, 여섯 다 <strong>사용자 본인의 애플 계정 안</strong>에서 끝납니다.</p>
   <div class="table-wrap">
   <table>
     <thead><tr><th>경로</th><th>무엇이 오가나</th><th>누가 볼 수 있나</th></tr></thead>
@@ -76,6 +79,7 @@
       <tr><td>아이클라우드 드라이브의 「부엉」 폴더</td><td>「클로드 연동」을 켰을 때의 <code>inbox.json</code> 파일 하나 (§4)</td><td>사용자 본인만</td></tr>
       <tr><td>같은 폴더의 <code>state.json</code></td><td><strong>맥에서</strong> 「클로드 연동」을 켰을 때 맥이 두는 가계부 사본 (§4)</td><td>사용자 본인만</td></tr>
       <tr><td>같은 폴더의 <code>captures/</code></td><td>「캡처 넣는 방법」을 <strong>맥의 클로드에 보내기</strong>로 고르셨을 때 사용자가 보낸 캡처 이미지 (§5)</td><td>사용자 본인만</td></tr>
+      <tr><td>기기 캘린더</td><td>「캘린더에 보이기」를 켰을 때 자동이체 지출의 결제일 (§6-1)</td><td>사용자 본인(그 캘린더를 나눠 쓰는 사람이 있다면 그 사람도)</td></tr>
       <tr><td>백업 내보내기</td><td>사용자가 그 자리에서 고른 위치에 저장되는 JSON 파일 하나</td><td>사용자가 정하는 대로</td></tr>
     </tbody>
   </table>
@@ -141,6 +145,12 @@
     <li>내보낸 파일은 <strong>암호가 걸려 있지 않은 보통의 텍스트 파일</strong>입니다.
         가계부 전체가 그대로 들어 있으니 두시는 자리를 정하실 때 참고하십시오.</li>
   </ul>
+
+  <h2>6-1. 캘린더 (원하시는 분만)</h2>
+  <p>설정 → 자동이체 맨 위 <strong>「캘린더에 보이기」</strong>를 켜시면 캘린더 접근을 묻고, 기기 캘린더에
+     <strong>「가계부 자동이체」</strong> 캘린더를 만들어 켜 둔 자동이체 지출의 결제일을 넣습니다. 자동이체를 고치면 그 일정도 고칩니다.
+     <strong>다른 캘린더의 일정은 읽거나 고치지 않습니다.</strong> 기기마다 따로 켜고, 기본은 꺼져 있습니다.
+     지우시려면 캘린더 앱에서 「가계부 자동이체」 캘린더를 지우시면 됩니다.</p>
 
   <h2>7. 제3자 제공·광고·추적</h2>
   <ul>

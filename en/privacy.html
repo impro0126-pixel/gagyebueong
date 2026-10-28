@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Budget Notebook</title>
+<!-- 영어판 개인정보처리방침(2026-10-28). 한국어 원본은 ../privacy.html — 내용을 바꾸면 둘 다 -->
+<link rel="canonical" href="https://impro0126-pixel.github.io/gagyebueong/en/privacy.html">
+<link rel="alternate" hreflang="ko" href="https://impro0126-pixel.github.io/gagyebueong/privacy.html">
+<link rel="alternate" hreflang="en" href="https://impro0126-pixel.github.io/gagyebueong/en/privacy.html">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <p class="back"><a href="./">← Budget Notebook</a> · <a href="../privacy.html" lang="ko">한국어</a></p>
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: October 28, 2026</p>
+
+  <div class="callout">
+    <strong>Budget Notebook does not collect your personal information.</strong>
+    There is no account, and the developer runs no server.
+    Your book stays on your devices and in <strong>your own iCloud</strong>.
+  </div>
+
+  <h2>1. What we don't collect</h2>
+  <ul>
+    <li>Identity information such as your name, email or phone number (there is no sign-up or login)</li>
+    <li>Location</li>
+    <li>Contacts, camera or microphone</li>
+    <li>Your photo library (when you send screenshots, you hand over only the photos you pick at that moment — §5)</li>
+    <li>Usage or analytics data (the app contains no analytics or ad modules)</li>
+    <li>Device identifiers or advertising identifiers</li>
+  </ul>
+  <p>The only system permission the app may ask for is <strong>Calendars</strong>, and only when you turn on
+     <strong>Show in Calendar</strong> under Settings → Recurring (§6). Photo selection uses the system picker,
+     which runs outside the app, so no photo permission is requested.</p>
+
+  <h2>2. Where your data is stored</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>What</th><th>Where</th></tr></thead>
+    <tbody>
+      <tr><td>Transactions (date, amount, description, payment method, category, memo)</td><td>In the app's storage on the device, and, if you're signed in to iCloud, in <strong>your own private iCloud database</strong></td></tr>
+      <tr><td>Accounts, cards (including the last four digits if you choose to enter them), debts</td><td>Same as above</td></tr>
+      <tr><td>Categories, budgets and recurring payments</td><td>Same as above</td></tr>
+      <tr><td>The Claude Link switch, the first-run flag, and which inbox items you've seen</td><td>Only in the app's settings on that device</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <ol>
+    <li><strong>No connection to banks or card companies.</strong> The app never asks for or stores bank IDs, passwords, certificates or full card numbers.</li>
+    <li><strong>iCloud is optional.</strong> Without it, everything works on the device.</li>
+    <li><strong>Data in iCloud goes into Apple's private database</strong> in your own account. The developer has no access to it.</li>
+  </ol>
+
+  <h2>3. The developer runs no server</h2>
+  <p>There is no path for your data to reach the developer. The app uses only Apple frameworks
+     (SwiftUI, SwiftData, CloudKit, Swift Charts, EventKit) and <strong>no third-party libraries</strong>.
+     Data leaves the device only in these ways, all inside your own Apple account:</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Path</th><th>What</th><th>Who can see it</th></tr></thead>
+    <tbody>
+      <tr><td>iCloud sync</td><td>Your whole book</td><td>Only you</td></tr>
+      <tr><td>The app's folder in iCloud Drive</td><td>With Claude Link on: the <code>inbox.json</code> file, the book copy <code>state.json</code> (Mac only), and screenshots you send to Claude (§4, §5)</td><td>Only you</td></tr>
+      <tr><td>Your device's calendar</td><td>With Show in Calendar on: recurring payment due dates (§6)</td><td>Only you, and anyone you share that calendar with</td></tr>
+      <tr><td>Backup export</td><td>One JSON file saved where you choose</td><td>As you decide</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>4. Claude Link — off by default</h2>
+  <p>A convenience feature for people who use the Claude desktop app. <strong>Unless you turn it on in Settings,
+     the app opens no files.</strong></p>
+  <ul>
+    <li>When on, the app watches <strong>only the <code>inbox.json</code> file</strong> in its own iCloud Drive folder
+        (shown as "Budget Notebook" in Finder and Files). It does not look at other files, photos or documents.</li>
+    <li>That file is written by <strong>your own Claude</strong>, not by this app. The app lists the lines and adds only the ones you choose.</li>
+    <li><strong>On the Mac only</strong>, the app keeps a copy of your book, <code>state.json</code>, in the same folder so your Claude can read it
+        (macOS doesn't let other programs open the app's storage). It contains transactions, accounts, cards and budgets, and is refreshed while the switch is on.</li>
+    <li>If that file includes account balances, the Mac app updates those accounts. iPhone and iPad don't change them.</li>
+    <li>Turning the switch off stops reading the file, and <strong>on the Mac the copy <code>state.json</code> is deleted</strong>.</li>
+  </ul>
+  <p>To be precise: the folder is in iCloud Drive, so it travels through Apple to your other devices.
+     What it never does is reach <strong>the developer</strong>.</p>
+
+  <h2>5. Sending screenshots to Claude</h2>
+  <p>If you use Claude Link, you can send card or bank screenshots so your Claude on the Mac turns them into transactions.
+     Only the photos you pick are used, and the camera is never used.</p>
+  <ul>
+    <li>The screenshots are uploaded to <strong>your own iCloud Drive</strong> (<code>captures/</code> in the app's folder).
+        Your Claude reads them and returns transactions through <code>inbox.json</code>.</li>
+    <li>The app itself has no code that connects to any AI service (§3). Only your own Claude, run by you on your Mac, sees the photos.</li>
+    <li>You can delete sent screenshots in the app by swiping, or in the Files app.</li>
+  </ul>
+
+  <h2>6. Calendar (optional)</h2>
+  <p>When you turn on <strong>Show in Calendar</strong> under Settings → Recurring, the app asks for calendar access, creates a
+     "Budget Note Recurring" calendar, and adds the due dates of your recurring expenses to it. When you edit a recurring payment,
+     the event is updated. <strong>Events in your other calendars are not read or changed.</strong> The setting is per device and off by default.</p>
+
+  <h2>7. Backup import and export</h2>
+  <ul>
+    <li><strong>Import</strong> reads only the one file you pick.</li>
+    <li><strong>Export</strong> saves your whole book as one JSON file where you choose.</li>
+    <li>The exported file is <strong>plain, unencrypted text</strong>. Keep it somewhere you trust.</li>
+  </ul>
+
+  <h2>8. Third parties, ads and tracking</h2>
+  <ul>
+    <li>The developer does not share or sell any data, because none is collected.</li>
+    <li>No ads, no analytics, no third-party SDKs, no tracking.</li>
+    <li>No in-app purchases.</li>
+  </ul>
+
+  <h2>9. Deleting your data</h2>
+  <ul>
+    <li>In the app, delete transactions, accounts, cards, debts and categories one by one, or remove sample data in one step with <strong>Remove Sample Data</strong>.</li>
+    <li>Deleting the app removes the book and settings on that device.</li>
+    <li>⚠️ <strong>Copies in iCloud remain after you delete the app.</strong> To remove them, go to
+        <strong>Settings → [your name] → iCloud → Manage Account Storage</strong> (on the Mac,
+        <strong>System Settings → [your name] → iCloud → Manage</strong>) and delete the app's data. Delete the app's folder in iCloud Drive
+        in the Files app or Finder to remove <code>inbox.json</code> and sent screenshots. Remove the "Budget Note Recurring" calendar in the Calendar app if you created it.</li>
+  </ul>
+
+  <h2>10. Children's privacy</h2>
+  <p>The app is not directed at children and collects no personal information from anyone, of any age.</p>
+
+  <h2>11. Changes to this policy</h2>
+  <p>If anything changes, this page and its date are updated. If a change would collect more, we will tell you separately in the app.</p>
+
+  <h2>12. Contact</h2>
+  <p><a href="mailto:impro0126@gmail.com">impro0126@gmail.com</a></p>
+</main>
+<footer>Contact · impro0126@gmail.com</footer>
+</body>
+</html>
